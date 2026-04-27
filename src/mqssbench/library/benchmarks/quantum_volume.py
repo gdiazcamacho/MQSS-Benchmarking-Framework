@@ -88,7 +88,7 @@ class QuantumVolumeBenchmark(Benchmark):
     generator = QuantumVolumeGenerator
     executor = DefaultBenchmarkExecutor
     analyzer = QuantumVolumeAnalyzer
-    supported_adapters: Tuple[str, ...] = ("mqss_qiskit",)
+    supported_adapters: Tuple[str, ...] = ("mqss_qiskit","qmio_qiskit")
     category = BenchmarkCategory.HARDWARE
     
     @override

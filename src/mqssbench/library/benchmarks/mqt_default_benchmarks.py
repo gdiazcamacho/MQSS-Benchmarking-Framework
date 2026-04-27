@@ -41,7 +41,7 @@ def _create_mqt_default_benchmark_class(bench_name: str) -> type:
         generator = MQTBenchGenerator  # uses context.benchmark_key to extract the benchmark name
         executor = DefaultBenchmarkExecutor
         analyzer = DefaultAnalyzer
-        supported_adapters: Tuple[str, ...] = ("mqss_qiskit",)
+        supported_adapters: Tuple[str, ...] = ("mqss_qiskit","qmio_qiskit")
         category = BenchmarkCategory.SOFTWARE
         
         @override

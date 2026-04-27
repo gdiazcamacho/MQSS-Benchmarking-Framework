@@ -22,7 +22,7 @@ class FileStorage(StorageBackend):
 
             atomic_write(
                 self.results_path,
-                lambda f: json.dump(payload, f, indent=2, ensure_ascii=False),
+                lambda f: json.dump(payload, f, indent=2, ensure_ascii=False, default=str),
             )
         except Exception as e:
             raise StorageError(e)

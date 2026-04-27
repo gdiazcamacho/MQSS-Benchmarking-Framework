@@ -148,7 +148,7 @@ class RandomizedBenchmarkingBenchmark(Benchmark):
     generator = RandomizedBenchmarkingGenerator
     executor = DefaultBenchmarkExecutor
     analyzer = RandomizedBenchmarkingAnalyzer
-    supported_adapters: Tuple[str, ...] = ("mqss_qiskit", "qiskit_simulator")
+    supported_adapters: Tuple[str, ...] = ("mqss_qiskit", "qiskit_simulator","qmio_qiskit")
     category = BenchmarkCategory.HARDWARE
 
     @override

@@ -161,7 +161,7 @@ class QAOABenchmark(Benchmark):
     generator = QAOAGenerator
     executor = HybridBenchmarkExecutor
     analyzer = QAOAAnalyzer
-    supported_adapters: Tuple[str, ...] = ("mqss_qiskit", "qiskit_simulator")
+    supported_adapters: Tuple[str, ...] = ("mqss_qiskit", "qiskit_simulator","qmio_qiskit")
     category = BenchmarkCategory.ALGORITHM
 
     @override
