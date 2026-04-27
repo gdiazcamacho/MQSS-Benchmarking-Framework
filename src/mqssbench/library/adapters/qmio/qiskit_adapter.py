@@ -32,8 +32,21 @@ class QmioQiskitAdapter(DeviceAdapter):
 
     def _get_backend(self):
         if self._backend is None:
-            # Adjust this import if your local QMIO path differs
-            from qmiotools.integrations.qiskitqmio import QmioBackend
+ 
+            try:
+              from qmiotools.integrations.qiskitqmio import QmioBackend
+            except ImportError as exc:
+                raise RuntimeError(
+                    "QMIO adapter selected, but qmiotools is not available in this Python environment.\n\n"
+                    "This is expected outside the CESGA QMIO environment. To run on QMIO, use the CESGA "
+                    "module/conda setup, for example:\n\n"
+                    "  module load qmio/hpc\n"
+                    "  module load qmio-tools/0.2.1-python-3.12\n"
+                    "  conda activate mqssbench\n"
+                    "  python -m pip install -e .\n"
+                    "  mqssbench run -c examples/qmio/qv_qmio.yaml\n\n"
+                    "Do not use `uv run` for real QMIO execution unless qmiotools is installed inside uv's .venv."
+                ) from exc
 
             # Simplest case: backend object with no credentials needed
             calibration_file = self.config.get("calibration_file", None)
