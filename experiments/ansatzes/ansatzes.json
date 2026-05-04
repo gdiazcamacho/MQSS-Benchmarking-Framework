@@ -1,0 +1,13 @@
+[
+    {
+        "nqubits": [12, 14],
+        "depth": [1, 2, 3, 4],
+        "ansatz" : ["simple01"],
+        "qpu_ansatz": ["c"],
+        "t_inv": [true],
+        "folder":  ["../Test"],
+        "save": [true],
+        "solve" : [true],
+        "submit": [false]
+    }
+]
